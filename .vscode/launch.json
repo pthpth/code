@@ -1,0 +1,1076 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "MA OmniEnv Tester",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "SimplePointerEnv/MultiOmniEnv/multiAgentOmniSkillTester.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--map_size=5",
+                "--n_skills=4",
+                "--total_episodes=100",
+                "--filtered_skill_observation=diamond_x",
+                "--random_action_episodes=20",
+                "--other_agent_observation=dist",
+                "--n_agents=3",
+                "--notes=testing",
+                "--diamond_count=4",
+                "--reward_scaling",
+                "--single_corridor_mode",
+                "--social_influence_scale=20",
+                "--social_influence"
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+        {
+            "name": "SA SimplePointerEnv Tester",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "SimplePointerEnv/SinglePointerEnv/singleAgentSkillTester.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--map_size=1",
+                "--n_skills=4",
+                "--can_turn_left",
+                "--filtered_skill_observation=angle",
+                "--notes=testing"
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+        {
+            "name": "MA SimplePointerEnv Tester",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "SimplePointerEnv/MultiPointerEnv/multiAgentSkillTester.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--map_size=2",
+                "--n_skills=4",
+                "--can_turn_left",
+                "--filtered_skill_observation=angle_diamond_x_y",
+                "--n_agents=2",
+                "--notes=testing"
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+    
+
+        {
+            "name": "Python: Pretrain (Debug) Cheetah Two",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "main.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah2",
+                "--steps_per_train=100",
+                "--steps_to_explore_before_train=2000",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=1", 
+                "--user=DebugTester",
+                "--n_skills=4"
+                
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+                {
+            "name": "QuickTest2 Pretrain (Debug) Cheetah Two - Skill Switching Entropy",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "main.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah2",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=consistentCombo",
+                "--quick_test",
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+        {
+            "name": "QuickTest2 2C_finetune_fewSkills_sequence",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "2C_finetune_fewSkills_sequence.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah2",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=consistentCombo",
+                "--quick_test",
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+        {
+            "name": "Test Finetune n Sequence",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "2C_finetuneNSequence.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah2",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=consistentCombo",
+                "--quick_test",
+                
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+        {
+            "name": "Test Finals - Social Fixed Step Skill Switch",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "0_FinalRun_TestBoth.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah2",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=7", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                "--SkillSwitchStartAfterEps=3",
+                "--SkillSwitchIntevalSteps=5",
+                "--skill_discriminator_input=state_change",
+                "--quick_test",
+                "--wandb"
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+        
+
+        {
+            "name": "Test Finals",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "0_FinalRun_TestBoth.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah2",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=state_change",
+                "--quick_test",
+                "--wandb",
+                "--seq_eps_decay=0.997",
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+        {
+            "name": "Test Finals with Horizon Discriminator",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "0_FinalRun_TestBoth.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah2",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=state_change",
+                "--quick_test",
+                "--wandb",
+                "--seq_eps_decay=0.997",
+                "--trajectory_skill_discriminator_horizon=5",
+                "--horizon_reward_calculation_type=past_reward_advantage"
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+        {
+            "name": "Big Social Test Finals with Horizon Discriminator (Binary Vector)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "0_FinalRun_TestBothRev.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah2",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=100", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=state_change",
+                "--quick_test",
+                "--wandb",
+                "--seq_eps_decay=0.997",
+                "--trajectory_skill_discriminator_horizon=5",
+                "--horizon_reward_calculation_type=average_reward",
+                "--use_binary_vector"
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+
+        {
+            "name": "Social Test Checkpointer",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "14_Post_SeqSanityCheck.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=Ant2",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=state_change",
+                "--quick_test",
+                "--wandb",
+                "--seq_eps_decay=0.997",
+                "--trajectory_skill_discriminator_horizon=5",
+                "--horizon_reward_calculation_type=average_reward",
+                "--use_binary_vector"
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+
+
+        {
+            "name": "Env Tester - Pusher3p",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "0_FinalRun_TestBothRev.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=Pusher3p",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=state_change",
+                "--quick_test",
+                "--wandb",
+                "--seq_eps_decay=0.997",
+                "--trajectory_skill_discriminator_horizon=5",
+                "--horizon_reward_calculation_type=average_reward",
+                "--use_binary_vector"
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+        {
+            "name": "Env Tester - Ant4 No Filter",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "0_FinalRun_TestBothRev.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=Ant4",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=state_change",
+                "--quick_test",
+                "--wandb",
+                "--seq_eps_decay=0.997",
+                "--trajectory_skill_discriminator_horizon=5",
+                "--horizon_reward_calculation_type=average_reward",
+                "--use_binary_vector",
+                "--filter_state=standard"
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+
+        {
+            "name": "Env Tester - Ant4 - Full Filter State",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "0_FinalRun_TestBothRev.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=Ant4",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=state_change",
+                "--quick_test",
+                "--wandb",
+                "--seq_eps_decay=0.997",
+                "--trajectory_skill_discriminator_horizon=5",
+                "--horizon_reward_calculation_type=average_reward",
+                "--use_binary_vector",
+                "--filter_state=full"
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+        {
+            "name": "Test Finals (Load Pretrain)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "0_FinalRun_TestBoth.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah2",
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=20",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=state_change",
+                "--wandb",
+                "--seq_eps_decay=0.99",
+                "--load_model_path=HalfCheetah2/ModelA-Feb13-consistentCombo-20Skills-2kEps-0.05Threshold_2024-02-14-12-27-19/params_finetune-train_NSkills5(Final).pth"
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+        {
+            "name": "(Profiler) Test Finals - Three Tasks - Ant",
+            "type": "debugpy",
+            "request": "launch",
+            // "module": "cProfile",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "-m", "cProfile", "-o", "quickProfile.prof", "0_FinalRun_DoAllThreeTasks.py",
+                "--env_name=Ant4",
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=5",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=next_state",
+                "--wandb",
+                "--seq_eps_decay=0.99",
+                "--trajectory_skill_discriminator_horizon=5",
+                "--horizon_reward_calculation_type=average_reward",
+                "--use_binary_vector",
+                "--filter_state=full",
+                "--trajectory_skill_discriminator_skip=2",
+                "--quick_test",
+                "single_step_skill_reward_scale=0.05"
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+        {
+            "name": "Test Finals - Three Tasks - Ant",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "0_FinalRun_DoAllThreeTasks.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=Ant4",
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=5",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=next_state",
+                "--wandb",
+                "--seq_eps_decay=0.99",
+                "--trajectory_skill_discriminator_horizon=5",
+                "--horizon_reward_calculation_type=average_reward",
+                "--use_binary_vector",
+                "--filter_state=full",
+                "--trajectory_skill_discriminator_skip=2",
+                "--quick_test",
+                
+                
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+         {
+            "name": "Extr Test Finals - Three Tasks - Ant",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "0_FinalRun_DoAllThreeTasks.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=Ant4",
+                "--SkillSwitchStartAfterEps=-1",
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=1",
+                "--SkillSwitchIntevalSteps=-1",
+                "--wandb",
+                "--seq_eps_decay=0.99",
+                "--filter_state=full",
+                "--quick_test",
+                "--only_extr_reward"
+                
+                
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+
+        {
+            "name": "Test Finals - Three Tasks (Ant 2)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "0_FinalRun_DoAllThreeTasks.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=Ant2",
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=consistentCombo",
+                "--wandb",
+                "--seq_eps_decay=0.99",
+                "--trajectory_skill_discriminator_horizon=5",
+                "--horizon_reward_calculation_type=average_reward",
+                "--use_binary_vector",
+                "--filter_state=full",
+                "--trajectory_skill_discriminator_skip=2",
+                "--quick_test",
+                // "--load_model_path=HalfCheetah6/example_2024-03-11-14-18-16/params_pretrain-train_Ep0.pth"                
+                
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+        {
+            "name": "NoSkillSwitch Test Finals - Three Tasks (HC6)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "0_FinalRun_DoAllThreeTasks.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah6",
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                // "--SkillSwitchStartAfterEps=5",
+                // "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                // "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=consistentCombo",
+                "--wandb",
+                "--seq_eps_decay=0.99",
+                "--trajectory_skill_discriminator_horizon=5",
+                "--horizon_reward_calculation_type=average_reward",
+                "--use_binary_vector",
+                "--filter_state=full",
+                "--trajectory_skill_discriminator_skip=2",
+                "--quick_test",
+                "--horizon_reward_scale=1",
+                "--single_step_skill_reward_scale=0.05",
+                "--learning_rate=1e-4",
+                // "--load_model_path=HalfCheetah6/example_2024-03-11-14-18-16/params_pretrain-train_Ep0.pth"                
+                
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+         {
+            "name": "NoSkillSwitch Test Finals - Three Tasks (Ant) - Full Run",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "0_FinalRun_DoAllThreeTasks.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=Ant4",
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=500", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                // "--SkillSwitchStartAfterEps=5",
+                // "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                // "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=consistentCombo",
+                "--wandb",
+                "--seq_eps_decay=0.99",
+                "--trajectory_skill_discriminator_horizon=5",
+                "--horizon_reward_calculation_type=average_reward",
+                "--use_binary_vector",
+                "--filter_state=full",
+                "--trajectory_skill_discriminator_skip=2",
+                "--horizon_reward_scale=1",
+                "--single_step_skill_reward_scale=0.05",
+                "--learning_rate=1e-4",
+                // "--load_model_path=HalfCheetah6/example_2024-03-11-14-18-16/params_pretrain-train_Ep0.pth"                
+                
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+        {
+            "name": "Big File Of All Runs",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "0_fullRun-Comparisons.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah2",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=consistentCombo",
+                "--quick_test",
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+         {
+            "name": "Big File Of All Runs HC6",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "0_fullRun-Comparisons.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah6",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                // "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=consistentCombo",
+                "--quick_test",
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+        {
+            "name": "Test Sequencer PPO",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "2A_sequence.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah2",
+                "--layerNormEnabled",
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=20",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.05",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=consistentCombo",
+                "--load_model_path=HalfCheetah2/ModelA-Feb13-consistentCombo-20Skills-2kEps-0.05Threshold_2024-02-14-12-27-19/params_finetune-train_NSkills5(Final).pth",
+                "--wandb",
+                "--quick_test",
+                "--planner_algo=PPO",
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+        {
+            "name": "Test Sequencer",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "2A_sequence.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah2",
+                "--layerNormEnabled",
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=20",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.05",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=consistentCombo",
+                "--load_model_path=HalfCheetah2/ModelA-Feb13-consistentCombo-20Skills-2kEps-0.05Threshold_2024-02-14-12-27-19/params_finetune-train_NSkills5(Final).pth",
+                "--wandb",
+                "--quick_test",
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+        {
+            "name": "Test Filtered Sequencer",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "4Mar_SanityCheck_FilteredSequencing.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah2",
+                "--layerNormEnabled",
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=20",
+                "--SkillSwitchStartAfterEps=5",
+                "--UpdateFreqSkillDiscriminatorForSwitches=2",
+                "--SkillDiscriminatorSwitchThreshold=0.05",
+                "--SkillSwitchIntevalSteps=-1",
+                "--skill_discriminator_input=consistentCombo",
+                "--load_model_path=HalfCheetah2/ModelA-Feb13-consistentCombo-20Skills-2kEps-0.05Threshold_2024-02-14-12-27-19/params_finetune-train_NSkills5(Final).pth",
+                "--wandb",
+                "--quick_test",
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+        {
+            "name": "Entrapta QuickTest2 Pretrain (Debug) Cheetah Two - Skill Switching Entropy",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "main.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah2",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=5", 
+                "--user=DebugTester",
+                "--n_skills=3",
+                "--SkillSwitchStartAfterEps=0",
+                "--UpdateFreqSkillDiscriminatorForSwitches=5",
+                "--SkillDiscriminatorSwitchThreshold=0.3",
+                "--SkillSwitchIntevalSteps=-1",
+                "--quick_test",
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl",
+                "LD_LIBRARY_PATH":"$LD_LIBRARY_PATH:/home/marmot/.mujoco/mujoco210/bin"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+        {
+            "name": "QuickTest6 Pretrain (Debug) Cheetah Six",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "main.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah6",
+                "--steps_per_train=100",
+                "--steps_to_explore_before_train=2000",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=5", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=1", 
+                "--user=DebugTester",
+                "--n_skills=4",
+                "--quick_test",
+                
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+        {
+            "name": "Python: Pretrain (Debug) Cheetah Six",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "main.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--env_name=HalfCheetah6",
+                "--steps_per_train=100",
+                "--steps_to_explore_before_train=2000",
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=1", 
+                "--user=DebugTester",
+                "--n_skills=4"
+                
+            ],
+            
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+{
+            "name": "Python: Pretrain (Debug) Walker",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "main.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--ContinuousSkillAnalysis=1", 
+                "--user=DebugTester",
+                "--n_skills=4"
+                
+            ],
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+        {
+            "name": "Python: Pretrain (Debug - No Analysis)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "main.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--social_influence",
+                "--social_influence_n_counterfactuals=10", 
+                "--social_influence_reward_scale=1", 
+                "--social_influence_loss_weight=1", 
+                "--layerNormEnabled", 
+                "--user=DebugTester",
+                "--n_skills=4"
+                
+            ],
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+
+                {
+            "name": "Generate Maps",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "Auxillary/PressurePlateMapGenerator.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+
+        },
+
+        {
+            "name": "strategy_planner",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "strategy_planner.py",
+            // "program": "${file}",
+            "console": "integratedTerminal",
+            // "args": [
+            //     "--social_influence",
+            //     "--social_influence_n_counterfactuals=10", 
+            //     "--social_influence_reward_scale=1", 
+            //     "--social_influence_loss_weight=1", 
+            //     "--layerNormEnabled", 
+            //     "--user=DebugTester",
+            //     "--n_skills=4"
+            // ],
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+                "MUJOCO_GL": "egl"
+                },
+            // "cwd": "${workspaceFolder}/URL_Benchmark_Mingliang"
+        },
+    ]
+}

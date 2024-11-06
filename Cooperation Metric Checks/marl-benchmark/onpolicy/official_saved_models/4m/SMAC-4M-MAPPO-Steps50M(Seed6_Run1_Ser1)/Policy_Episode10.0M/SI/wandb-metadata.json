@@ -1,0 +1,272 @@
+{
+    "os": "Linux-5.4.0-150-generic-x86_64-with-debian-buster-sid",
+    "python": "3.6.1",
+    "heartbeatAt": "2024-09-06T06:42:09.319503",
+    "startedAt": "2024-09-06T06:42:07.802191",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--env_name",
+        "StarCraft2",
+        "--algorithm_name",
+        "mappo",
+        "--experiment_name",
+        "SMAC-LOAD4M-TrainSI-MAPPO-Steps50M-10M-Seed6",
+        "--map_name",
+        "4m",
+        "--seed",
+        "6",
+        "--n_training_threads",
+        "1",
+        "--n_rollout_threads",
+        "8",
+        "--num_mini_batch",
+        "1",
+        "--episode_length",
+        "400",
+        "--num_env_steps",
+        "50000000",
+        "--ppo_epoch",
+        "10",
+        "--clip_param",
+        "0.05",
+        "--use_value_active_masks",
+        "--use_eval",
+        "--eval_episodes",
+        "32",
+        "--eval_interval",
+        "100",
+        "--cuda",
+        "--use_wandb",
+        "--no_train_policy",
+        "--model_dir",
+        "../../official_saved_models/4m/SMAC-4M-MAPPO-Steps50M(Seed6_Run1_Ser1)/Policy_Episode10.0M",
+        "--si_loss_type",
+        "kl",
+        "--only_use_argmax_action",
+        "--minimal_gifs"
+    ],
+    "state": "running",
+    "program": "../train/train_smac.py",
+    "codePathLocal": null,
+    "codePath": "Cooperation Metric Checks/marl-benchmark/onpolicy/scripts/train/train_smac.py",
+    "git": {
+        "remote": "git@github.com:marmotlab/contractual_gifting.git",
+        "commit": "61546dee1f183fd46969f8824da8e2fdea761559"
+    },
+    "email": "swastikhurana0800@gmail.com",
+    "root": "/home/marmot/Pamela/contractual_gifting",
+    "host": "ME5406-Server4",
+    "username": "marmot",
+    "executable": "/home/marmot/anaconda3/envs/marl_benchmark/bin/python",
+    "cpu_count": 18,
+    "cpu_count_logical": 36,
+    "cpu_freq": {
+        "current": 1200.3059444444445,
+        "min": 1200.0,
+        "max": 4633.333333333333
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1200.02,
+            "min": 1200.0,
+            "max": 4800.0
+        },
+        {
+            "current": 1200.743,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.515,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.493,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.415,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1267.08,
+            "min": 1200.0,
+            "max": 4700.0
+        },
+        {
+            "current": 1200.741,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.492,
+            "min": 1200.0,
+            "max": 4800.0
+        },
+        {
+            "current": 1200.038,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.539,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.758,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.442,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.101,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.048,
+            "min": 1200.0,
+            "max": 4700.0
+        },
+        {
+            "current": 1200.611,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.496,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.451,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.345,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1201.23,
+            "min": 1200.0,
+            "max": 4800.0
+        },
+        {
+            "current": 1200.714,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.67,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.485,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.676,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1242.839,
+            "min": 1200.0,
+            "max": 4700.0
+        },
+        {
+            "current": 1200.841,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.532,
+            "min": 1200.0,
+            "max": 4800.0
+        },
+        {
+            "current": 1200.455,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.635,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.329,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.661,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.578,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.541,
+            "min": 1200.0,
+            "max": 4700.0
+        },
+        {
+            "current": 1200.23,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.661,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.745,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 1200.633,
+            "min": 1200.0,
+            "max": 4600.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 186.6832160949707,
+            "used": 37.57388687133789
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3090",
+            "memory_total": 25769803776
+        },
+        {
+            "name": "NVIDIA GeForce RTX 3090",
+            "memory_total": 25769803776
+        }
+    ],
+    "memory": {
+        "total": 125.49602890014648
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "attachmentFolderPath": "images",
+  "userIgnoreFilters": [
+    "Cooperation Metric Checks/",
+    "__pycache__/",
+    "group_social_influence/"
+  ]
+}
